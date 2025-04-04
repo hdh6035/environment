@@ -1,0 +1,40 @@
+body {
+    margin: 30px;
+    text-align: center;
+    background-color: #F0F0F0;
+}
+
+div {
+    margin: 10px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+div > div {
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: none;
+
+    > img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+}
+
+
+/* style3.css 참조 */
+button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #d32f2f;
+}
