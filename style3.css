@@ -111,7 +111,7 @@ h2#question {
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    /* cursor: pointer; 휴대폰 기반이므로 커서 모양를 정의할 필요가 없음 */
 }
 
 #reset-btn:hover {
