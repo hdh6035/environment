@@ -32,24 +32,25 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Install Rust and WebAssembly target
-      - name: Install Rust
+      # 러스트 셋업
+      - name: 러스트 셋업
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           target: wasm32-unknown-unknown
           override: true
 
-      # Install wasm-pack for building WebAssembly
-      - name: Install wasm-pack
-        run: cargo install wasm-pack
+      # wasm-pack 설치
+      - name: 깔꺼 깔기
+        run: |
+          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
-      # Build wasm module with wasm-pack
-      - name: Build with wasm-pack
+      # wasm 빌드
+      - name: wasm파일로 만들기
         run: wasm-pack build --target web
 
-      # Manually copy site assets and wasm files to _site/
-      - name: Copy static files and wasm build to _site
+      # 정적 파일 복사
+      - name: 정적 파일 복사
         run: |
           mkdir -p _site
           cp index.html _site/
