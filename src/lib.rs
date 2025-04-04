@@ -55,4 +55,3 @@ pub fn turnstyle_id_to_block(id: u8) {
 
     block.style().set_property("display", "block").unwrap();
 }
-
