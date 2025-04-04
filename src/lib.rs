@@ -19,7 +19,7 @@ pub fn setup_button() {
         let _ = window()
             .unwrap()
             .location()
-            .set_href("/index.html");
+            .set_href("index.html");
     }) as Box<dyn Fn()>);
 
     button.set_onclick(Some(closure.as_ref().unchecked_ref()));
@@ -55,4 +55,3 @@ pub fn turnstyle_id_to_block(id: u8) {
 
     block.style().set_property("display", "block").unwrap();
 }
-
