@@ -19,7 +19,7 @@ pub fn setup_button() {
         let _ = window()
             .unwrap()
             .location()
-            .set_href("/index.html");
+            .set_href("/");
     }) as Box<dyn Fn()>);
 
     button.set_onclick(Some(closure.as_ref().unchecked_ref()));
