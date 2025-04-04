@@ -28,15 +28,38 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+
+      # Install Rust and WebAssembly target
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
         with:
-          source: ./
-          destination: ./_site
+          toolchain: stable
+          target: wasm32-unknown-unknown
+          override: true
+
+      # Install wasm-pack for building WebAssembly
+      - name: Install wasm-pack
+        run: cargo install wasm-pack
+
+      # Build wasm module with wasm-pack
+      - name: Build with wasm-pack
+        run: wasm-pack build --target web
+
+      # Manually copy site assets and wasm files to _site/
+      - name: Copy static files and wasm build to _site
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r index _site/
+          cp -r pkg _site/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
   # Deployment job
   deploy:
