@@ -46,6 +46,7 @@ jobs:
       - name: 정적 파일 복사
         run: |
           mkdir -p _site
+          cp booths.js _site/
           cp index.html _site/
           cp intro.html _site/
           cp script4.js _site/
