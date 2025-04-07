@@ -1,6 +1,11 @@
 use wasm_bindgen::prelude::*;
 use web_sys::{window, Document, HtmlElement};
 
+#[wasm_bindgen(start)]
+pub fn start(){
+    initation();
+    setup_button();
+}
 
 #[wasm_bindgen]
 pub fn setup_button() {
