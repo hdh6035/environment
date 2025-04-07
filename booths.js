@@ -1,6 +1,7 @@
 createBooth(
     '1',
-    'https://example.com/image1.jpg',
+    'https://drive.google.com/file/d/1qGTOAi0Q4q4F841-AURSxo38lCOAJjjZ/view?usp=drive_link',
+    //'https://example.com/image1.jpg',
     300,
     200,
     '부스 1',
