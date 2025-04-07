@@ -21,10 +21,10 @@ class Booth {
         img.height = this.imgHeight;
 
         const h2 = document.createElement('h2');
-        h2.textContent = this.title;
+        h2.innerHTML = this.title;
 
         const p = document.createElement('p');
-        p.textContent = this.description;
+        p.innerHTML = this.description;
 
         innerDiv.appendChild(img);
         innerDiv.appendChild(h2);
