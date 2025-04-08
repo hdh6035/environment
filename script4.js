@@ -112,7 +112,7 @@ function showQuestion() {
         if (answer.correct) {
             button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer);
+        button.addEventListener('click', selectAnswer, { once: true});  // 한 번만 실행되도록 변경 함.
         answerButtonsElement.appendChild(button);
     });
 }
