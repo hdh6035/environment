@@ -72,14 +72,14 @@ const resetButton = document.getElementById('reset-btn');
 let currentQuestionIndex = 0;
 let score = 0;
 let selectedQuestions = [];
-let userAnswers = []; // 사용자의 선택을 저장할 배열
+let userAnswers = [];
 let hasAnswered = false;
 
 const RESET_KEY = "a6398175!";
 
 function getRandomQuestions() {
     const shuffled = [...questions].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 5);
+    const result = shuffled.slice(0, 5);
     return result;
 }
 
@@ -95,7 +95,7 @@ function startQuiz() {
     
     currentQuestionIndex = 0;
     score = 0;
-    userAnswers = []; // 사용자 선택 초기화
+    userAnswers = [];
     selectedQuestions = getRandomQuestions();
     nextButton.innerHTML = '다음';
     nextButton.style.display = 'none';
@@ -105,6 +105,7 @@ function startQuiz() {
 
 function showQuestion() {
     resetState();
+    hasAnswered = false;
     const currentQuestion = selectedQuestions[currentQuestionIndex];
     questionElement.innerHTML = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
     currentQuestion.answers.forEach(answer => {
@@ -114,7 +115,7 @@ function showQuestion() {
         if (answer.correct) {
             button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer, { once: true});  // 한 번만 실행되도록 변경 함.
+        button.addEventListener('click', selectAnswer, { once: true }); // 한 번만 실행되도록 설정
         answerButtonsElement.appendChild(button);
     });
 }
@@ -127,14 +128,14 @@ function resetState() {
 }
 
 function selectAnswer(e) {
-    if (hasAnswered) return;   // 추가
+    if (hasAnswered) return; 
     
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct === 'true';
     if (correct) {
         score++;
     }
-    // 사용자의 선택 기록
+    
     const currentQuestion = selectedQuestions[currentQuestionIndex];
     const correctAnswer = currentQuestion.answers.find(answer => answer.correct).text;
     userAnswers.push({
@@ -143,11 +144,13 @@ function selectAnswer(e) {
         correctAnswer: correctAnswer,
         isCorrect: correct
     });
+    
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct === 'true');
-        button.disabled = true;  // 추가
+        button.disabled = true; 
     });
-    hasAnswered = true;  //추가
+    
+    hasAnswered = true; 
     nextButton.style.display = 'block';
 }
 
@@ -176,18 +179,16 @@ nextButton.addEventListener('click', () => {
 
 function showScore() {
     resetState();
-    console.log("Final Score:", score, "Total Questions:", selectedQuestions.length);  // 추가
-    if (score > selectedQuestions.length) {   // 추가
-        score = selectedQuestions.length; // 최대 점수를 문제 수로 제한  // 추가
-        console.warn("Score exceeded total questions. Adjusted to:", score);  // 추가
+    // 점수와 문제 수 확인
+    console.log("Final Score:", score, "Total Questions:", selectedQuestions.length);  
+    if (score > selectedQuestions.length) {   
+        score = selectedQuestions.length; // 최대 점수를 문제 수로 제한  
+        console.warn("Score exceeded total questions. Adjusted to:", score);  
     }
-
     
-    // 점수 표시
     questionElement.innerHTML = `당신의 점수는 ${selectedQuestions.length}점 만점에 ${score}점입니다!`;
     nextButton.style.display = 'none';
     
-    // 결과 표시
     const resultsDiv = document.createElement('div');
     resultsDiv.classList.add('results');
     
