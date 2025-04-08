@@ -73,12 +73,14 @@ let currentQuestionIndex = 0;
 let score = 0;
 let selectedQuestions = [];
 let userAnswers = []; // 사용자의 선택을 저장할 배열
+let hasAnswered = false;
 
 const RESET_KEY = "a6398175!";
 
 function getRandomQuestions() {
     const shuffled = [...questions].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 5);
+    return result;
 }
 
 function startQuiz() {
