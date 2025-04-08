@@ -125,6 +125,8 @@ function resetState() {
 }
 
 function selectAnswer(e) {
+    if (hasAnswered) return;   // 추가
+    
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct === 'true';
     if (correct) {
@@ -141,7 +143,9 @@ function selectAnswer(e) {
     });
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct === 'true');
+        button.disabled = true;  // 추가
     });
+    hasAnswered = true;  //추가
     nextButton.style.display = 'block';
 }
 
@@ -170,6 +174,13 @@ nextButton.addEventListener('click', () => {
 
 function showScore() {
     resetState();
+    console.log("Final Score:", score, "Total Questions:", selectedQuestions.length);  // 추가
+    if (score > selectedQuestions.length) {   // 추가
+        score = selectedQuestions.length; // 최대 점수를 문제 수로 제한  // 추가
+        console.warn("Score exceeded total questions. Adjusted to:", score);  // 추가
+    }
+
+    
     // 점수 표시
     questionElement.innerHTML = `당신의 점수는 ${selectedQuestions.length}점 만점에 ${score}점입니다!`;
     nextButton.style.display = 'none';
