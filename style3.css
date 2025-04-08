@@ -62,17 +62,17 @@ h2#question {
 }
 
 .correct {
-    background-color: #00CED1;
-    color: black;
-    font-weight: bold;
-}
-
-.incorrect {
     background-color: #658f35;
     color: black;
     font-weight: bold;
 }
 
+/*.incorrect {
+    background-color: #658f35;
+    color: black;
+    font-weight: bold;
+}
+*/
 .next-btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
