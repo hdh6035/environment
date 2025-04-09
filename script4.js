@@ -1,5 +1,5 @@
 const questions = [
-{
+    {
         question: "세계환경의 날은 언제일까요?",
         answers: [
             { text: "3월 22일", correct: false },
