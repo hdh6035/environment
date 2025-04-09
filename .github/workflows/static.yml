@@ -44,9 +44,9 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
 
-      # wasm-pack 설치
+      # wasm-pack 설치 (수정된 부분)
       - name: Install wasm-pack
-        run: cargo install wasm-pack
+        run: cargo install wasm-pack --force
 
       # WebAssembly 빌드
       - name: Build WebAssembly
