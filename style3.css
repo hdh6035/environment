@@ -61,18 +61,32 @@ h2#question {
     background-color: #f5f5f5;
 }
 
+.btn:not(.correct):not(.incorrect):hover {  /* 새로 추가 */
+    background-color: #f5f5f5;;
+}
+
 .correct {
     background-color: #658f35;
     color: black;
     font-weight: bold;
 }
 
-/*.incorrect {
-    background-color: #658f35;
+.incorrect {
+    background-color: #c75656;
     color: black;
     font-weight: bold;
 }
-*/
+
+.btn.correct:hover {
+    background-color: #658f35; /* 정답 색상 유지 새로 추가 */
+    color: black;
+}
+
+.btn.incorrect:hover {
+    background-color: #c75656; /* 오답 색상 유지 새로 추가 */
+    color: black;
+}
+
 .next-btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
