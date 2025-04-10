@@ -584,6 +584,9 @@ function selectAnswer(e) {
     const correct = selectedButton.dataset.correct === 'true';
     if (correct) {
         score++;
+        selectedButton.classList.add('correct'); // 정답일 때 색상 적용
+    } else {
+        selectedButton.classList.add('incorrect'); // 오답일 때 색상 적용
     }
     
     const currentQuestion = selectedQuestions[currentQuestionIndex];
@@ -596,7 +599,6 @@ function selectAnswer(e) {
     });
     
     Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct === 'true');
         button.disabled = true; 
     });
     
