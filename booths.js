@@ -14,7 +14,7 @@ const booths = [
         height: 200,
         title: '로봇팔 체험하기',
         description: '아두이노 이용<br>자동화'
-    }
+    },
     {
         id: '3',
         img: 'https://i.postimg.cc/zXw6cC95/1.jpg',
@@ -22,7 +22,7 @@ const booths = [
         height: 200,
         title: '로봇팔 체험하기',
         description: '아두이노 이용<br>자동화'
-    }
+    },
     {
         id: '4',
         img: 'https://i.postimg.cc/zXw6cC95/1.jpg',
@@ -30,7 +30,7 @@ const booths = [
         height: 200,
         title: '로봇팔 체험하기',
         description: '아두이노 이용<br>자동화'
-    }
+    },
     {
         id: '5',
         img: 'https://i.postimg.cc/zXw6cC95/1.jpg',
@@ -38,7 +38,7 @@ const booths = [
         height: 200,
         title: '로봇팔 체험하기',
         description: '아두이노 이용<br>자동화'
-    }
+    },
     {
         id: '6',
         img: 'https://i.postimg.cc/zXw6cC95/1.jpg',
@@ -46,7 +46,7 @@ const booths = [
         height: 200,
         title: '로봇팔 체험하기',
         description: '아두이노 이용<br>자동화'
-    }
+    },
     {
         id: '7',
         img: 'https://i.postimg.cc/zXw6cC95/1.jpg',
@@ -54,7 +54,7 @@ const booths = [
         height: 200,
         title: '로봇팔 체험하기',
         description: '아두이노 이용<br>자동화'
-    }
+    },
     {
         id: '8',
         img: 'https://i.postimg.cc/zXw6cC95/1.jpg',
