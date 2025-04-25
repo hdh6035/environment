@@ -537,9 +537,23 @@ function startQuiz() {
     const quizCompleted = localStorage.getItem('quizCompleted') === 'true';
     
     if (quizCompleted) {
-        questionElement.innerHTML = "퀴즈는 이미 완료되었습니다. 리셋 키를 입력해 재시작하세요.";
-        answerButtonsElement.style.display = 'none';
-        nextButton.style.display = 'none';
+        // 수정: 저장된 데이터를 불러와 점수와 결과를 표시
+        const savedScore = localStorage.getItem('quizScore'); // 점수 불러오기
+        const savedUserAnswers = JSON.parse(localStorage.getItem('quizUserAnswers')); // 사용자 답변 불러오기
+        const savedQuestions = JSON.parse(localStorage.getItem('quizSelectedQuestions')); // 선택된 문제 불러오기
+
+        // 저장된 데이터가 모두 존재하는지 확인
+        if (savedScore && savedUserAnswers && savedQuestions) {
+            score = parseInt(savedScore); // 저장된 점수를 정수로 변환
+            userAnswers = savedUserAnswers; // 사용자 답변 복원
+            selectedQuestions = savedQuestions; // 선택된 문제 복원
+            showScore(); // 점수와 결과를 표시
+        } else {
+            // 저장된 데이터가 없으면 리셋 안내 메시지 표시
+            questionElement.innerHTML = "퀴즈는 이미 완료되었습니다. 리셋 키를 입력해 재시작하세요.";
+            answerButtonsElement.style.display = 'none';
+            nextButton.style.display = 'none';
+        }
         return;
     }
     
@@ -667,13 +681,22 @@ function showScore() {
     });
     
     answerButtonsElement.appendChild(resultsDiv);
-    localStorage.setItem('quizCompleted', 'true');
+    
+    // 수정: localStorage에 퀴즈 데이터를 저장하여 새로고침 후에도 결과가 유지되도록 함
+    localStorage.setItem('quizCompleted', 'true'); // 퀴즈 완료 상태 저장
+    localStorage.setItem('quizScore', score.toString()); // 점수를 문자열로 저장
+    localStorage.setItem('quizUserAnswers', JSON.stringify(userAnswers)); // 사용자 답변을 JSON 문자열로 저장
+    localStorage.setItem('quizSelectedQuestions', JSON.stringify(selectedQuestions)); // 선택된 문제를 JSON 문자열로 저장
 }
 
 resetButton.addEventListener('click', () => {
     const inputKey = resetKeyInput.value.trim();
     if (inputKey === RESET_KEY) {
-        localStorage.removeItem('quizCompleted');
+        // 수정: 리셋 시 모든 저장된 데이터를 삭제하여 퀴즈를 초기화
+        localStorage.removeItem('quizCompleted'); // 퀴즈 완료 상태 삭제
+        localStorage.removeItem('quizScore'); // 저장된 점수 삭제
+        localStorage.removeItem('quizUserAnswers'); // 저장된 사용자 답변 삭제
+        localStorage.removeItem('quizSelectedQuestions'); // 저장된 선택된 문제 삭제
         resetKeyInput.value = '';
         alert('퀴즈가 리셋되었습니다. 다시 시작할 수 있습니다.');
         startQuiz();
