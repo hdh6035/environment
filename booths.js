@@ -1,11 +1,11 @@
 const booths = [
     {
         id: '1',
-        img: 'https://i.postimg.cc/zXw6cC95/1.jpg',
+        img: 'https://i.postimg.cc/8PpYm8NP/image.jpg',
         width: 300,
         height: 200,
-        title: '친환경 화분 만들기',
-        description: '옥수수전분으로 만든 3D프린터 화분<br>흙 대신 커피 찌꺼기 사용'
+        title: '화분 컵케이크 만들기',
+        description: '화분 모양의 컵에 식용 재료로 케이크를 만들고, 토핑을 흑ㄹ과 식물처럼 꾸며보는 창의적 베이킹 체험!<br>디저트를 만들며 환경의 소중합까지 함께 배워보는 시간입니다.'
     },
     {
         id: '2',
