@@ -17,7 +17,7 @@ const booths = [
     },    
     {
         id: '3',
-        img: 'https://i.postimg.cc/rwjjsgCv/posri2.png',
+        img: 'https://i.postimg.cc/TPLS94kK/image.jpg',
         width: 300,
         height: 200,
         title: '친환경 화분 만들기와 로봇팔 및 인공지능 체험하기',
