@@ -25,11 +25,11 @@ const booths = [
     },    
     {
         id: '4',
-        img: 'https://i.postimg.cc/VNNRCMK5/1160531-930240-1930.jpg',
+        img: 'https://i.postimg.cc/vHTjv478/image.jpg',
         width: 300,
         height: 200,
-        title: '거제중학교',
-        description: '자율주행 등등<br>코딩 등등'
+        title: '환경 개선 챌린지',
+        description: '스파이크 프라임을 사용해 도록 위 쓰레기를 피해 운전하고 쓰레기를 수거하는 자동차 주행 체험<br>엔트리를 활용하여 분리수거의 방법을 자세히 살펴보는 게임 체험'
     },    
     {
         id: '5',
