@@ -6,6 +6,7 @@ body {
     align-items: center; 
     height: 100vh;
     flex-direction: column;
+    background-color: #f0f0f0;
 }
 
 div {
@@ -16,7 +17,7 @@ div {
 }
 
 div > div {
-    padding: 30px;
+    padding: 5px;
     background-color: #FFFFFF;
     border-radius: 10px;
     box-shadow: none;

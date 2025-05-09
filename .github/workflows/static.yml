@@ -1,5 +1,5 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+# WebAssembly 기반 정적 사이트를 GitHub Pages에 배포하는 워크플로우
+name: Deploy WebAssembly Site to GitHub Pages
 
 on:
   push:
@@ -25,34 +25,49 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 러스트 셋업
-      - name: 러스트 셋업
-        uses: actions-rs/toolchain@v1
+      # Rust 툴체인 설치
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@master
         with:
           toolchain: stable
-          target: wasm32-unknown-unknown
-          override: true
+          targets: wasm32-unknown-unknown
 
-      # wasm-pack 설치
-      - name: 깔꺼 깔기
-        run: |
-          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+      # Rust 캐시 설정
+      - name: Cache Rust dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/
+            ~/.cargo/git/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
 
-      # wasm 빌드
-      - name: wasm파일로 만들기
+      # wasm-pack 설치 (수정된 부분)
+      - name: Install wasm-pack
+        run: cargo install wasm-pack --force
+
+      # WebAssembly 빌드
+      - name: Build WebAssembly
         run: wasm-pack build --target web
 
-      # 정적 파일 복사
-      - name: 정적 파일 복사
+      # 정적 파일 복사 (파일 존재 여부 확인 추가)
+      - name: Copy static files
         run: |
           mkdir -p _site
-          cp index.html _site/
-          cp intro.html _site/
-          cp script4.js _site/
-          cp style3.css _site/
-          cp -r index _site/
-          cp -r pkg _site/
+          for file in booths.js index.html intro.html script4.js style3.css; do
+            if [ -f "$file" ]; then
+              cp "$file" _site/ || echo "Warning: $file not found"
+            else
+              echo "Error: $file not found"
+              exit 1
+            fi
+          done
+          [ -d "index" ] && cp -r index _site/ || echo "Warning: index directory not found"
+          [ -d "pkg" ] && cp -r pkg _site/ || echo "Error: pkg directory not found; build may have failed"
 
+      # 아티팩트 업로드
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
