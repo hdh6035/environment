@@ -4,15 +4,15 @@ const booths = [
         img: 'https://i.postimg.cc/0273vtjK/ESD.png',
         width: 300,
         height: 200,
-        title: '오호~ 친환경 물병이다!'<br>'(오호 만들기)',
+        title: '오호~ 친환경 물병이다!<br>(오호 만들기)',
         description: '해조류 성분으로 만든 신기한 친환경 물병, 오호(Ooho)! 직접 만들고 지구를 지키는 한 모금의 가치를 만들어보세요.'
     },
     {
         id: '2',
-        img: 'https://i.postimg.cc/PqkqHqfd/image.png',
+        img: 'https://i.postimg.cc/k52vJ4sY/image.png',
         width: 300,
         height: 200,
-        title: '과일청 에이드 만들기 체험',
+        title: 'NO화학! 세제를 부탁해<br>,(친환경 DIY 세제 만들기)',
         description: '과일청을 활용해 내 취향에 맞는 에이드를 만들어보는 체험활동!<br>새콤달콤한 한 잔 속에 친환경 메시지를 담아, 환경 보호에 한 걸음 더 다가가 봅시다.'
     },    
     {
