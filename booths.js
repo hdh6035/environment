@@ -81,7 +81,6 @@ const booths = [
     },
     {
         id: '11',
-        img:,
         width: 300,
         height: 200,
         title: '친환경 꽃갈피 만들기',
