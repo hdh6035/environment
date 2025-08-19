@@ -9,43 +9,43 @@ const booths = [
     },
     {
         id: '2',
-        img: 'https://i.postimg.cc/k52vJ4sY/image.png',
+        img: 'https://i.postimg.cc/nh0GB3g9/image.png',
         width: 300,
         height: 200,
-        title: 'NO화학! 세제를 부탁해<br>(친환경 DIY 세제 만들기)',
-        description: '화학 성분 걱정 NO! 자연 유래 재료로 나만의 친환경 세제를 직접 만들어보세요.<br>우리 가족 건강과 환경을 지키는 첫걸음!'
+        title: '컬러링 환경티슈 케이스<br><숲·바다·북극을 물들이는 작은 손길>',
+        description: '숲, 바다, 북극이 담긴 티슈 케이스 도안을 색칠해보세요.<br>작은 손길로 알록달록 채우다 보면 지구가 더 아름다워집니다. 🌍🎨'
     },    
     {
         id: '3',
-        img: 'https://i.postimg.cc/V6M9tV3j/image.png',
+        img: 'https://i.postimg.cc/xCbGrnCL/image.png',
         width: 300,
         height: 200,
-        title: '업사이클 매직! 나만의 에코 키링<br>(업사이클링 병뚜껑 키링 만들기)',
-        description: '버려진 병뚜껑이 나만의 개성 있는 키링으로 변신!<br>업사이클링의 재미와 의미를 함께 느껴보세요.'
+        title: '지구바람 손선풍기 만들기<br><환경을 품은 시원한 바람 한 줌>',
+        description: '손잡이를 꾹 누르면 팬이 빙글 돌아가요.<br>전기 없이도 솔솔 시원한 바람을 느낄 수 있는 특별한 친환경 손선풍기! 🌿💨'
     },    
     {
         id: '4',
-        img: 'https://i.postimg.cc/Kj2PD52C/image.png',
+        img: 'https://i.postimg.cc/J0Nbnxjn/image.png',
         width: 300,
         height: 200,
-        title: '친환경 요정 소환! 모루 쨩<br>(환경사랑 모루 인형 만들기)',
-        description: '알록달록 모루로 만드는 귀여운 인형!<br>나만의 친환경 요정 ‘모루쨩’을 만들어 지구를 지키는 메시지도 전해보아요.'
+        title: '나만의 우드트리 만들기<br><작은 나무가 자라는 시간>',
+        description: '나무 키트를 색칠하고 조립해 나만의 단풍나무와 둥근나무를 만들어보세요.<br>작은 손길로 만드는 특별한 나무가 여러분의 공간을 채웁니다. 🌳✨'
     },    
     {
         id: '5',
-        img: 'https://i.postimg.cc/gjHvS6cj/POP.png',
+        img: 'https://i.postimg.cc/GhRFN01s/image.png',
         width: 300,
         height: 200,
-        title: '에코 톡톡! 환경을 뽑아봐<br>(QR환경퀴즈 + 환경 공모전)',
-        description: '환경을 주제로 한 삼행시 또는 환경 글귀를 적어 응모통에 넣어보세요!<br>정성껏 적어준 카드 중에서 랜덤으로 선물을 드려요(공연시간)'
+        title: '나만의 분리수거 북아트<br><책 속에 담은 환경이야기>',
+        description: '포일아트 기법으로 나만의 분리수거함 북아트를 만들어보세요.<br>재활용과 환경 이야기가 담긴 특별한 책을 직접 완성할 수 있어요. 📚♻️'
     },
     {
         id: '6',
-        img: 'https://i.postimg.cc/fWcjT17s/1.png',
+        img: 'https://i.postimg.cc/52Nw4wy4/image.png',
         width: 300,
         height: 200,
-        title: '1분 요리 연구소: 나만의 레시피 실험실<br>(창작요리 만들기)',
-        description: '주어진 재료로 1분 안에 나만의 레시피를 뚝딱! 아이디어와 순발력이 빛나는 요리 실험실에서 창의적인 요리사로 거듭나보세요.'
+        title: '업사이클 작품 전시+분리배출 퀴즈+환경 캠페인<br><쓰임 팡! 활용 팡! 우리는 지구 지킴이>',
+        description: '버려진 플라스틱이 새롭게 변신하고, 분리배출 퀴즈와 환경 캠페인 참여로 지구 지킴이 모험을 즐겨보세요! 🌍✨'
     },
     {
         id: '7',
