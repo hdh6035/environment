@@ -1,11 +1,11 @@
 const booths = [
     {
         id: '1',
-        img: 'https://i.postimg.cc/0273vtjK/ESD.png',
+        img: 'https://i.postimg.cc/fTT5XFDx/image.png',
         width: 300,
         height: 200,
-        title: '오호~ 친환경 물병이다!<br>(오호 만들기)',
-        description: '해조류 성분으로 만든 신기한 친환경 물병,<br>오호(Ooho)! 직접 만들고 지구를 지키는 한 모금의 가치를 만들어보세요.'
+        title: '재미있게! 올바르게! 분리수거 Game<br><분리수거가 더 즐거워지는 캠페인>',
+        description: '버려진 카드를 분리수거통에 ‘착!’, 탁구공을 ‘톡!’ 골인지점에 넣어보세요.<br>환경도 지키고 간식도 챙기는 즐거운 친환경 게임!'
     },
     {
         id: '2',
